@@ -1,11 +1,61 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import IndecisionApp from "./components/IndecisionApp";
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
+const ExpenseDashboardPage = () => {
+    return(
+        <div>
+        This is from my dashboard component okay
+    </div>
+    );
+}
+   
+const AddExpensePage = () => {
+    return(
+        <div>
+        This from my add expense page
+       </div>
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+    )
+};
+
+const EditExpensePage = () => {
+    return(
+        <div>
+        This from my add expense page
+    </div>
+
+    )
+
+}
+
+const HelpPage = () => {
+    return(
+        <div>
+        This from my add expense page
+    </div>
+
+    )
+}
+
+
+const Routes = ()=>{
+    return(
+        <BrowserRouter>
+        <Switch>
+            <Route exact path="/" component={AddExpensePage}/>
+            <Route path="/create" component={AddExpensePage}/>
+            <Route path="/edit" component={EditExpensePage}/>
+            <Route path="/help" component={HelpPage} />
+        </Switch>    
+        </BrowserRouter>
+
+    );
+}
+
+ReactDOM.render(<Routes /> , document.getElementById('app'));
 
 
 
